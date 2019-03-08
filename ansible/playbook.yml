@@ -2,5 +2,13 @@
 - hosts: local
   gather_facts: yes
   become: true
+
+  pre_tasks:
+    - name: Read vars from secrets file
+      include_vars: "{{ secrets_file }}"
+      tags:
+        - always
+
   roles:
-    - apache2
+    - { role: apache2,      tags: ['apache2' ] }
+    - { role: mongodb,      tags: ['mongodb' ] }

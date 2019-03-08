@@ -1,0 +1,5 @@
+[local]
+ubuntu_container ansible_connection=docker
+
+[local:vars]
+ansible_python_interpreter=/usr/bin/python3
