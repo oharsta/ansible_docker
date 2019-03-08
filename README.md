@@ -3,7 +3,6 @@
 Run a docker Ubuntu image and test / run ansible scripts against the container.
 
 ```
-DOCKER_CONTAINER_NAME="ubuntu_container"
 docker run -it --name ubuntu_container ubuntu:bionic bash
 unminimize
 <ctr-d>
