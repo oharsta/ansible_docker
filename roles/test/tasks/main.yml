@@ -4,6 +4,7 @@
     path: "/opt"
   register: path_exists
 
+# Deliberately changed for idempotency fail
 - debug:
     var: path_exists
   changed_when: true
