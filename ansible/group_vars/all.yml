@@ -1,6 +1,0 @@
-mongo_users:
-  - { name: digidrw, db_name: digid, password: "{{ mongo_passwords.digid }}", roles: readWrite }
-  - { name: eduidrw, db_name: eduid, password: "{{ mongo_passwords.eduid }}", roles: readWrite }
-  - { name: studie_linkrw, db_name: studie_link, password: "{{ mongo_passwords.studie_link }}", roles: readWrite }
-  - { name: utrw, db_name: ut, password: "{{ mongo_passwords.ut }}", roles: readWrite }
-  - { name: uurw, db_name: uu, password: "{{ mongo_passwords.uu }}", roles: readWrite }

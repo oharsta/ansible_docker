@@ -1,0 +1,8 @@
+---
+- name: Store path information
+  stat:
+    path: "/opt"
+  register: path_exists
+
+- debug:
+    var: path_exists
