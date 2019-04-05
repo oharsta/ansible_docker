@@ -6,3 +6,4 @@
 
 - debug:
     var: path_exists
+  changed_when: true
