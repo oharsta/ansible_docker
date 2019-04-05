@@ -16,4 +16,4 @@ script:
   - ansible-playbook -i inventory.yml playbook.yml --syntax-check
   - ansible-playbook -i inventory.yml playbook.yml
   - "ansible-playbook -i inventory.yml playbook.yml > /tmp/ans.res"
-  - "grep -q 'changed=0.*failed=0' /tmp/ans.res && (echo 'Idempotence test: pass' && exit 0) || (echo 'Idempotence test: fail' && exit 1)"
+  - "grep -q 'changed=0.*failed=0' /tmp/ans.res && (echo 'Idempotence test: pass' && exit 0) || (echo 'Idempotence test: fail' && cat /tmp/ans.res && exit 1)"
