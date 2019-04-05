@@ -7,7 +7,7 @@ services:
 
 before_install:
   - docker pull oharsta/repository:ubuntu_unminimize
-  - docker run --name ubuntu_container  -td oharsta/repository:ubuntu_unminimize
+  - docker run --name ubuntu_container -td oharsta/repository:ubuntu_unminimize
 
 install:
   - pip install ansible
@@ -15,4 +15,7 @@ install:
 script:
   - ansible-playbook -i inventory.yml playbook.yml --syntax-check
   - ansible-playbook -i inventory.yml playbook.yml
-  - ansible-playbook -i inventory.yml playbook.yml | grep -q 'changed=0.*failed=0' && (echo 'Idempotence test: pass' && exit 0) || (echo 'Idempotence test: fail' && exit 1)
+  - |
+    ansible-playbook -i inventory.yml playbook.yml |
+    grep -q 'changed=0.*failed=0' && (echo 'Idempotence test: pass' && exit 0) ||
+    (echo 'Idempotence test: fail' && exit 1)
